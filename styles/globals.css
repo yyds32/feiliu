@@ -1,0 +1,37 @@
+:root{
+  --brand: #0366d6;
+  --text: #222;
+  --muted: #666;
+}
+
+html,body,#__next{
+  height:100%;
+}
+
+body{
+  margin:0;
+  color:var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:#fff;
+}
+
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:24px;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:12px 0;
+}
+
+.header img{height:40px}
+
+.site-title{font-size:20px; font-weight:600; color:var(--brand)}
+
+.card{background:#fff; border:1px solid #eee; border-radius:6px; padding:16px}
+
+.search-input{width:100%; padding:8px; border:1px solid #ddd; border-radius:4px}
