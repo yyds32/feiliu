@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import Head from 'next/head'
 import Header from '../components/Header'
+import { CartProvider } from '../context/cart'
 
 export default function App({ Component, pageProps }){
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com'
@@ -21,7 +22,9 @@ export default function App({ Component, pageProps }){
 
       <div className="container">
         <Header />
-        <Component {...pageProps} />
+        <CartProvider>
+          <Component {...pageProps} />
+        </CartProvider>
       </div>
     </>
   )
