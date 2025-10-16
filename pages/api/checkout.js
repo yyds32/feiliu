@@ -1,4 +1,4 @@
-const prisma = require('../../lib/prisma')
+const { getPrisma } = require('../../lib/prisma')
 const Stripe = require('stripe')
 
 export default async function handler(req, res) {
@@ -26,6 +26,8 @@ export default async function handler(req, res) {
 
   try {
     // create pending order locally
+    const prisma = getPrisma()
+    if (!prisma) return res.status(500).json({ error: 'Prisma not initialized' })
     const total = items.reduce((s, i) => s + i.price * i.quantity, 0)
     const order = await prisma.order.create({
       data: { email, total, status: 'pending' },

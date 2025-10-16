@@ -1,8 +1,10 @@
-const prisma = require('../../lib/prisma')
+const { getPrisma } = require('../../lib/prisma')
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
+      const prisma = getPrisma()
+      if (!prisma) return res.status(500).json({ error: 'Prisma not initialized' })
       const products = await prisma.product.findMany({ orderBy: { createdAt: 'desc' } })
       return res.status(200).json({ products })
     } catch (err) {

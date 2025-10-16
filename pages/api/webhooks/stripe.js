@@ -1,5 +1,5 @@
 const Stripe = require('stripe')
-const prisma = require('../../../lib/prisma')
+const { getPrisma } = require('../../../lib/prisma')
 
 export const config = { api: { bodyParser: false } }
 
@@ -30,7 +30,8 @@ export default async function handler(req, res) {
     const session = event.data.object
     const orderId = session.metadata?.orderId
     if (orderId) {
-      await prisma.order.update({ where: { id: Number(orderId) }, data: { status: 'paid' } })
+      const prisma = getPrisma()
+      if (prisma) await prisma.order.update({ where: { id: Number(orderId) }, data: { status: 'paid' } })
     }
   }
 
