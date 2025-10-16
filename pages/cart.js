@@ -1,6 +1,5 @@
 import { useCart } from '../context/cart'
 import { useState } from 'react'
-import fetch from 'isomorphic-unfetch'
 
 export default function CartPage() {
   const { items, remove, clear } = useCart()
