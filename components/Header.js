@@ -9,6 +9,8 @@ export default function Header(){
         <div style={{ fontSize:12, color:'#666' }}>示例站点副标题</div>
       </div>
       <nav style={{ marginLeft: 'auto' }}>
+        <a href="/shop" style={{ marginRight: 12 }}>商店</a>
+        <a href="/cart" style={{ marginRight: 12 }}>购物车</a>
         <a href="/variant/functional" style={{ marginRight: 12 }}>功能版</a>
         <a href="/variant/visual">视觉版</a>
       </nav>

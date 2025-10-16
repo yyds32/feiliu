@@ -12,6 +12,43 @@ npm install
 npm run dev
 ```
 
+## E-commerce MVP (local setup)
+
+This project includes a minimal e-commerce prototype using Prisma (SQLite) and Stripe (test mode).
+
+1. Copy `.env.example` to `.env` and fill `STRIPE_SECRET_KEY` and `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`.
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Generate Prisma client and run migrations (creates `dev.db`):
+
+```bash
+npm run prisma:generate
+npm run migrate
+```
+
+4. Seed example products:
+
+```bash
+npm run seed
+```
+
+5. Run dev server:
+
+```bash
+npm run dev
+```
+
+Checkout pages:
+- /shop — 商品目录
+- /shop/[slug] — 商品详情
+- /cart — 购物车与结算 (Stripe test)
+
+On production (Vercel), set environment variables: `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`, and `NEXT_PUBLIC_SITE_URL`.
+
 部署建议：Vercel 或 Netlify（Next.js 支持良好）。
 
 部署到 Vercel（推荐）
