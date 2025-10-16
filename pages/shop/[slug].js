@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import fetch from 'isomorphic-unfetch'
+// use global fetch (available in the browser / Next.js)
 import { useEffect, useState } from 'react'
 import { useCart } from '../../context/cart'
 

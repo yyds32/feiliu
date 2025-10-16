@@ -1,4 +1,4 @@
-const prisma = require('../../../lib/prisma')
+const prisma = require('../../lib/prisma')
 const Stripe = require('stripe')
 
 export default async function handler(req, res) {

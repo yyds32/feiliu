@@ -1,6 +1,5 @@
 import useSWR from 'swr'
 import Link from 'next/link'
-import fetch from 'isomorphic-unfetch'
 
 const fetcher = (url) => fetch(url).then((r) => r.json())
 

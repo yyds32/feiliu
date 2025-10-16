@@ -1,6 +1,6 @@
 import { buffer } from 'micro'
 const Stripe = require('stripe')
-const prisma = require('../../lib/prisma')
+const prisma = require('../../../lib/prisma')
 
 export const config = { api: { bodyParser: false } }
 
